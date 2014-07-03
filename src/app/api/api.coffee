@@ -48,6 +48,9 @@ angular.module("doubtfire.api", [
 .factory("Students", (resourcePlus) ->
   resourcePlus "/students"
 )
+.factory("Helpdesk", (resourcePlus) ->
+  resourcePlus "/helpdesk/schedule"
+)
 
 
 
