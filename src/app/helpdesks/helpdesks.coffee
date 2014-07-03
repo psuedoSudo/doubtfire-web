@@ -46,9 +46,10 @@ angular.module("doubtfire.helpdesks"
     calendar:{
       disableDragging: true,
       weekends: false,
+      allDaySlot: false,
       minTime: 7,
       maxTime: 17,
-      height: 350,
+      height: 400,
       defaultView: 'agendaWeek',
       editable: true,
       header:{
