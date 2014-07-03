@@ -18,7 +18,7 @@
     "lodash": "latest",
     "underscore.string": "latest", 
     "angular-ui-calendar": "latest"
-  } 
+  },
   "resolutions": {
     "d3": "~3.4.1"
   }
