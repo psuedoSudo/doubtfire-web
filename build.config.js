@@ -67,7 +67,9 @@ module.exports = {
    */
   vendor_files: {
     js: [
-      'vendor/jquery/jquery.js',
+      'vendor/jquery/dist/jquery.js',
+      'vendor/jquery/dist/jquery.min.map',
+      'vendor/jquery-ui/ui/jquery-ui.js', 
       'vendor/angular/angular.js',
       'vendor/angular-cookies/angular-cookies.js',
       'vendor/angular-resource/angular-resource.js',
@@ -82,9 +84,13 @@ module.exports = {
       'vendor/momentjs/moment.js',
       'vendor/d3/d3.js',
       'vendor/nvd3/nv.d3.js',
-      'vendor/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js'
+      'vendor/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js',
+      'vendor/angular-ui-calendar/src/calendar.js',
+      'vendor/fullcalendar/fullcalendar.js', 
+      'vendor/fullcalendar/gcal.js'
     ],
     css: [
+      'vendor/fullcalendar/fullcalendar.css'
     ]
   },
 };
