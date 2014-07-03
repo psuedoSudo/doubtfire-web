@@ -1,0 +1,12 @@
+<div  class="col-md-9" ng-switch on="unitRole.role">
+<!--	<ul class="breadcrumb">
+    	<li><a href="#/home">Helpdesks</a></li>
+    	<li class="active">{{unitRole.unit_name}} {{unitRole.role.name}}</li>
+  </ul> -->
+<h1>Helpdesk</h1>
+<div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+
+	<div class="alert-top">
+  		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="alert.close()">{{ alert.msg }}</alert>
+	</div>
+</div>
