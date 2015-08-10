@@ -1,4 +1,37 @@
-<div>
+<div class="panel panel-primary">
+  <div class="panel-heading clearfix">
+    <div class="pull-left">
+      <h4 class="panel-title">Plagiarism</h4>
+      Viewing students suspected of plagiarism
+      <span ng-show="view == 'all-students'">
+        from all labs
+      </span>
+      <span ng-show="view == 'my-students'">
+        from my labs
+      </span>
+      <span ng-show="view == 'tasks'">
+        by task
+      </span>
+    </div>
+    <div class="col-sm-5 text-right"></div>
+      <div class="btn-group pull-right" style="margin-left: 1ex">
+        <label class="btn btn-default" ng-model="view" btn-radio="'all-students'">
+          <i class="fa fa-university" tooltip="Show all students"></i>
+        </label>
+        <label class="btn btn-default" ng-model="view" btn-radio="'my-students'">
+          <i class="fa fa-pencil" tooltip="Show only my students"></i>
+        </labeltasks        <label class="btn btn-default" ng-model="view" btn-radio="'myStudents'">
+          <i class="fa fa-paper-o" tooltip="Show by task"></i>
+        </label>
+      </div>
+      <form ng-show="view == 'all-students' || view == 'my-students'" role="search" class="col-sm-4 form-horizontal pull-right">
+        <input id="searchbar" class="input-md form-control" placeholder="Search Students..." type="search" ng-model="search" typeahead="text for text in unitService.unitTypeAheadData(unit) | filter:$viewValue | limitTo:8" typeahead-wait-ms="200" autofocus />
+        <p ng-show="filteredStudents.length < allStudents.length && filteredStudents.length != 0">Showing {{filteredStudents.length}} of {{unit.students.length}} students enrolled.</p>
+        <p ng-show="filteredStudents.length < allStudents.length && filteredStudents.length == 0">No students found.</p>
+    </form>
+  </div>
+
+
   <ul class="nav nav-pills nav-stacked col-sm-2">
     <li role="presentation" ng-class="{'active' : view == 'all-students' }"><a ng-click="setActiveView('all-students')">All Students</a></li>
     <li role="presentation" ng-class="{'active' : view == 'my-students' }"><a ng-click="setActiveView('my-students')">My Students</a></li>
@@ -10,7 +43,7 @@
         <input id="searchbar" class="input-md form-control" placeholder="Search students, tutors..." type="search" ng-model="search" typeahead="text for text in unitService.unitTypeAheadData(unit) | filter:$viewValue | limitTo:8" typeahead-wait-ms="500" autofocus />
         <p class="help-block" ng-show="filteredStudents.length < allStudents.length && filteredStudents.length != 0">Showing {{filteredStudents.length}} of {{allStudents.length}} students.</p>
         <p class="help-block" ng-show="filteredStudents.length < allStudents.length && filteredStudents.length == 0">No students found.</p>
-      </form>  
+      </form>
       <div class="table-responsive">
         <table class="table table-condensed table-hover">
           <thead>
